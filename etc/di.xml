@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dyrecta_Beecart extension
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category  Dyrecta
+ * @package   Dyrecta_Beecart
+ * @copyright Copyright (c) 2017
+ * @license   http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Dyrecta\Beecart\Api\RenewalRepositoryInterface" type="Dyrecta\Beecart\Model\RenewalRepository"/>
+    <preference for="Dyrecta\Beecart\Api\Data\RenewalInterface" type="Dyrecta\Beecart\Model\Renewal"/>
+    <preference for="Dyrecta\Beecart\Api\Data\RenewalSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+    <type name="Dyrecta\Beecart\Model\ResourceModel\Renewal\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">dyrecta_beecart_renewal</argument>
+            <argument name="eventPrefix" xsi:type="string">dyrecta_beecart_renewal_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">renewal_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Dyrecta\Beecart\Model\ResourceModel\Renewal</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dyrecta_beecart_renewal_listing_data_source" xsi:type="string">Dyrecta\Beecart\Model\ResourceModel\Renewal\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

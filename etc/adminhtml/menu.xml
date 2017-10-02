@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dyrecta_Beecart extension
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category  Dyrecta
+ * @package   Dyrecta_Beecart
+ * @copyright Copyright (c) 2017
+ * @license   http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dyrecta_Beecart::beecart" title="Beecart" module="Dyrecta_Beecart" sortOrder="1010" resource="Dyrecta_Beecart::beecart"/>
+        <add id="Dyrecta_Beecart::beecart_renewal" title="Renewals" module="Dyrecta_Beecart" sortOrder="10" action="dyrecta_beecart/renewal" resource="Dyrecta_Beecart::beecart_renewal" parent="Dyrecta_Beecart::beecart"/>
+    </menu>
+</config>
